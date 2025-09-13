@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    text-align: center;
+    background: url('../bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.container {
+    padding: 50px;
+}
+
+.heading {
+    font-size: 64px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 3px 3px #00000033;
+    margin-bottom: 50px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    margin: 10px;
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+    border: none;
+}
+
+.btn:hover {
+    background: linear-gradient(to right, #ff7eb3, #ff758c);
+}
+
+.video-container {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.image-frame {
+    display: inline-block;
+    padding: 10px;
+    background: #fff;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.image-frame img {
+    width: 400px;
+    height: auto;
+    border-radius: 15px;
+}
+
+.comment {
+    font-size: 24px;
+    color: #ffd700;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.ss-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    padding: 10px 15px;
+    background: #ff758c;
+    color: #fff;
+    border-radius: 10px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery .frame {
+    margin: 10px;
+    background: #fff;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.gallery .frame img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Center third button below Fit & Complexity buttons */
+.center-btn {
+    margin-top: 20px;
+}

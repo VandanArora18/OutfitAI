@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Webcam</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1 class="heading">Webcam Capture</h1>
+
+    <div class="video-container">
+        <img id="videoFeed" src="{{ url_for('video_feed') }}" style="width:640px;height:480px;">
+    </div>
+    <form action="{{ url_for('capture') }}" method="post">
+        <button type="submit" class="btn">Capture</button>
+    </form>
+
+</div>
+</body>
+</html>

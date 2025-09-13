@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Outfit Rater</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1 class="heading">OUTFIT-RATER</h1>
+    <div class="buttons">
+        <a href="{{ url_for('webcam') }}" class="btn">Start Webcam</a>
+        <a href="{{ url_for('saved_images') }}" class="btn">Saved Images</a>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Result</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<script>
+function takeScreenshot() {
+    html2canvas(document.body, {
+        scrollY: -window.scrollY,
+        scrollX: -window.scrollX,
+        windowWidth: document.documentElement.scrollWidth,
+        windowHeight: document.documentElement.scrollHeight
+    }).then(function(canvas) {
+        let imgData = canvas.toDataURL('image/png');
+        fetch("{{ url_for('save_ss') }}", {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ image: imgData })
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert("Screenshot saved as: " + data.filename);
+        })
+        .catch(err => console.error(err));
+    });
+}
+</script>
+
+<body>
+<div class="container">
+    <h1 class="heading">Outfit Result</h1>
+    <div class="image-frame">
+        <img src="{{ url_for('static', filename=img_path.split('static/')[1]) }}">
+    </div>
+    <p class="comment" id="comment">
+        {% if comment %}{{ comment }}{% else %}Generating comment...{% endif %}
+    </p>
+    <div class="buttons">
+        <button class="btn">{{ fit_label }}</button>
+        <button class="btn">{{ complexity_label }}</button>
+        <button class="btn">{{ rating }}</button>  <!-- Rating displayed directly -->
+    </div>
+    
+    <a href="#" onclick="takeScreenshot()" class="ss-btn">SS</a>
+</div>
+
+<script>
+// Fetch the AI comment asynchronously
+fetch("{{ url_for('get_comment') }}")
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById("comment").innerText = data.comment;
+    })
+    .catch(err => console.error(err));
+</script>
+</body>
+</html>
