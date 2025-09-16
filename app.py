@@ -16,7 +16,7 @@ fit_class_names = ['Baggy', 'Tight']
 complexity_class_names = ['Multilayer', 'Single Layer']
 input_height, input_width = fit_model.input_shape[1:3]
 
-genai.configure(api_key="Your-API-Key-Here") 
+genai.configure(api_key="AIzaSyDPmEp36vj--CN116xyiTxHsfYHIAHA6y4") 
 ai_model = genai.GenerativeModel("gemini-1.5-flash")
 def preprocess_for_model(image):
     img_resized = cv2.resize(image, (input_width, input_height))
