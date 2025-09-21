@@ -1,7 +1,7 @@
 # 🧥 Outfit Rater: The AI-Powered Fashion Judge  
 
 Outfit Rater is a fun Flask-based web app that rates your outfits in real time.  
-It combines computer vision with AI-generated playful roasts to give you a score, style labels (like **Baggy/Tight**, **Single/Multilayer**), and even sassy comments about your fashion choices.  
+It combines computer vision with AI-generated playful roasts to give you a score, style labels (like **Baggy/Tight**, **Single/Multilayer**), and even comments about your fashion choices.  
 
 ---
 
